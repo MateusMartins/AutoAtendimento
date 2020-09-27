@@ -1,0 +1,8 @@
+{
+    "$kind": "Microsoft.MultiLanguageRecognizer",
+    "id": "LUIS_autoatendimento",
+    "recognizers": {
+        "en-us": "autoatendimento.en-us.lu",
+        "": "autoatendimento.en-us.lu"
+    }
+}

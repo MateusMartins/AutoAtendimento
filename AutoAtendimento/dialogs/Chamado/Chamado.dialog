@@ -1,0 +1,105 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "vzA3Fx",
+    "name": "Chamado",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FJPLVD"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "Cke0RV"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_Cke0RV()}",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_Cke0RV()}",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.chamado"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "oVPw75"
+          },
+          "assignments": [
+            {
+              "property": "user.numeroChamado",
+              "value": "=rand(100, 999)"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "BQ7WvB"
+          },
+          "method": "POST",
+          "headers": {},
+          "resultProperty": "dialog.api_response",
+          "url": "http://127.0.0.1:5000/empdb/employee",
+          "body": "{\"id\":\"${user.numeroChamado}\", \"name\": \"${user.chamado}\"}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "IhhEUF"
+          },
+          "condition": "=dialog.api_response.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "S6uWjf"
+              },
+              "activity": "${SendActivity_S6uWjf()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "enSBhN"
+              },
+              "activity": "${SendActivity_enSBhN()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "8q1SV8"
+              },
+              "activity": "${SendActivity_8q1SV8()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "oEdyMK"
+              },
+              "activity": "${SendActivity_oEdyMK()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "Chamado.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "Chamado"
+}

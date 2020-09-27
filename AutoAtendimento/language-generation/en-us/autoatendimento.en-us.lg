@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_202664()
+- ```Olá, bem vindo ao nosso HelpDesk, como eu posso te ajudar?```
+
+# SendActivity_269411()
+- ${@answer}
+
+# SendActivity_Nx1CSe()
+- ```Não consegui entender o que você falou, tente digitar "ajuda"```
+
+
+
+# SendActivity_vVw2PG()
+- Muito obrigado por utilizar a nossa plataforma, precisa de mais alguma coisa?

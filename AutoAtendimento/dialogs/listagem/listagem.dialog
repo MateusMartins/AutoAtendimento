@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "PoorDk",
+    "name": "listagem",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "E6G8SU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "TUg1Ye"
+          },
+          "activity": "${SendActivity_TUg1Ye()}"
+        }
+      ]
+    }
+  ],
+  "generator": "listagem.lg",
+  "recognizer": "listagem.lu.qna",
+  "id": "listagem"
+}

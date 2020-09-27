@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_V0pR2z()
+- ```Eu sou um robô de helpdesk, auxilio as pessoas a abrir os chamados para manutenção do local de trabalho, como: 
+"Troca de mouse" 
+"Troca de monitor" 
+"Cadeira está com problema"
+
+Sendo assim, eu realizo as seguintes operações: 
+-Abertura de chamado
+-Listagem de serviços
+-Status do chamado
+-Ajuda
+ 
+Tente digitar alguma destas frases para executar a tarefa desejada```

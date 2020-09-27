@@ -1,0 +1,103 @@
+[import](common.lg)
+
+# TextInput_InvalidPrompt_knTmeX()
+-
+# TextInput_Prompt_Cke0RV()
+-``` Certo, para abrir o seu chamado, digite exatamente qual é o problema que você está enfrentando em uma frase, por exemplo:
+
+"Estou com problemas no meu teclado"
+"Minha cadeira está quebrada"
+```
+# TextInput_UnrecognizedPrompt_Cke0RV()
+- não entendi
+
+# SendActivity_S6uWjf()
+-```Maravilha, coletamos a sua solicitação, um chamado foi aberto com o número:   ${user.numeroChamado} para "${user.chamado}"
+
+Esta solicitalção está com o status: "Em análise"
+```
+
+
+
+# SendActivity_8q1SV8()
+- Erro ao cadastrar solicitação
+# SendActivity_enSBhN()
+- ``` Agora que a sua solicitação foi cadastrada, você pode consultar os nossos outros serviços, basta digitar "Listar os serviços", caso precise de ajuda, digite "Ajuda"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SendActivity_oEdyMK()
+- ``` Você pode consultar os nossos outros serviços, basta digitar "Listar os serviços", caso precise de ajuda, digite "Ajuda"
+```
+
+
+
+
+
+
+
+
+
+

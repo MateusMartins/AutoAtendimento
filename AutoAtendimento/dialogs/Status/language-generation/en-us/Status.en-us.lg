@@ -1,0 +1,17 @@
+[import](common.lg)
+
+# NumberInput_Prompt_u9Oiiz()
+- Qual é o numero do seu chamado?
+# SendActivity_R93Tgf()
+- Verificando o status para o chamado ${user.numeroChamadoStatus}
+# SendActivity_DJgxsp()
+-```Encontramos o chamado ${dialog.result.id}, trata-se de: "${dialog.result.name}"
+Este chamado está com o status: Em análise
+```
+# SendActivity_Pz9Dlm()
+- Desculpe, mas não encontramos o seu chamado
+# SendActivity_B127so()
+- Agora que verificamos o status do seu chamado, tente ver o status de outro chamado ou crie um novo, caso precise de ajuda, digite "ajuda"
+# SendActivity_g85iCH()
+-  ``` Você pode consultar os nossos outros serviços, basta digitar "Listar os serviços", caso precise de ajuda, digite "Ajuda"
+```

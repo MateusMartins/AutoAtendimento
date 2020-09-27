@@ -1,0 +1,107 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "nSiIHU",
+    "name": "Status",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "KIG20f"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "u9Oiiz"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_u9Oiiz()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.numeroChamadoStatus"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "R93Tgf"
+          },
+          "activity": "${SendActivity_R93Tgf()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "iDWREn"
+          },
+          "method": "GET",
+          "url": "http://127.0.0.1:5000/empdb/employee/${user.numeroChamadoStatus}",
+          "resultProperty": "dialog.api_response"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "XPJirP"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "vRQixc"
+              },
+              "value": "=dialog.api_response.content",
+              "property": "dialog.result"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "DJgxsp"
+              },
+              "activity": "${SendActivity_DJgxsp()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "B127so"
+              },
+              "activity": "${SendActivity_B127so()}"
+            }
+          ],
+          "condition": "=dialog.api_response.statusCode == 200",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Pz9Dlm"
+              },
+              "activity": "${SendActivity_Pz9Dlm()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "g85iCH"
+              },
+              "activity": "${SendActivity_g85iCH()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "Status.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "Status"
+}
